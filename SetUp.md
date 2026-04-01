@@ -54,7 +54,7 @@ $Code = Read-Host "Please insert everything after 'https://example.com/callback?
 $ClientBytes = [System.Text.Encoding]::UTF8.GetBytes("${ClientId}:${ClientSecret}")
 $EncodedClientInfo =[Convert]::ToBase64String($ClientBytes)
 
-curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -H "Authorization: Basic $EncodedClientInfo" -d "grant_type=authorization_code&redirect_uri=https://example.com/callback&code=$Code" https://accounts.spotify.com/api/token
+curl.exe -X POST -H "Content-Type: application/x-www-form-urlencoded" -H "Authorization: Basic $EncodedClientInfo" -d "grant_type=authorization_code&redirect_uri=https://example.com/callback&code=$Code" https://accounts.spotify.com/api/token
 ```
 
 </details>
@@ -74,7 +74,7 @@ https://accounts.spotify.com/authorize?client_id={SPOTIFY_CLIENT_ID}&response_ty
 - Then run a [curl command](https://httpie.org/run) in the form of:
 
 ```sh
-curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -H "Authorization: Basic {BASE64}" -d "grant_type=authorization_code&redirect_uri=https://example.com/callback&code={CODE}" https://accounts.spotify.com/api/token
+curl.exe -X POST -H "Content-Type: application/x-www-form-urlencoded" -H "Authorization: Basic {BASE64}" -d "grant_type=authorization_code&redirect_uri=https://example.com/callback&code={CODE}" https://accounts.spotify.com/api/token
 ```
 
 - Save the Refresh token
